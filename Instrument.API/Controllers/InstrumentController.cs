@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using Instrument.API.Application.Interfaces;
+using Instrument.API.Domain.Interfaces;
+using Instrument.API.Domain.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Instrument.API.Controllers
@@ -11,26 +11,19 @@ namespace Instrument.API.Controllers
     [Route("[controller]")]
     public class InstrumentController : ControllerBase
     {
+        private readonly IInstrumentService _instrumentService;
 
-        private readonly ILogger<InstrumentController> _logger;
-
-        public InstrumentController(ILogger<InstrumentController> logger)
+        public InstrumentController(IInstrumentService instrumentService)
         {
-            _logger = logger;
+            _instrumentService = instrumentService;
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpPost]
+        public async Task<IActionResult> GetById([FromBody] List<FinancialInstrumentModel> model)
         {
-            //var rng = new Random();
-            //return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            //{
-            //    Date = DateTime.Now.AddDays(index),
-            //    TemperatureC = rng.Next(-20, 55),
-            //    Summary = Summaries[rng.Next(Summaries.Length)]
-            //})
-            //.ToArray();
-            return null;
+            return Ok(await _instrumentService.ReturnCategories(model));
         }
+
+
     }
 }

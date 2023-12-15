@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrument.API", "Instrument.API\Instrument.API.csproj", "{7E18985D-9584-451D-8E89-ACEF6EC4C884}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instrument.API", "Instrument.API\Instrument.API.csproj", "{7E18985D-9584-451D-8E89-ACEF6EC4C884}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrument.API.Infra.Data", "Instrument.API.Infra.Data\Instrument.API.Infra.Data.csproj", "{388D17B0-DF0E-4B82-8F29-01302717DF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instrument.API.Infra.Data", "Instrument.API.Infra.Data\Instrument.API.Infra.Data.csproj", "{388D17B0-DF0E-4B82-8F29-01302717DF9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrument.API.Domain", "Instrument.API.Domain\Instrument.API.Domain.csproj", "{134847B5-37D9-4F4D-832E-4DDE6193C24F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instrument.API.Domain", "Instrument.API.Domain\Instrument.API.Domain.csproj", "{134847B5-37D9-4F4D-832E-4DDE6193C24F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrument.API.Application", "Instrument.API.Application\Instrument.API.Application.csproj", "{E918260C-A547-46ED-980D-F673CF6BF2DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instrument.API.Application", "Instrument.API.Application\Instrument.API.Application.csproj", "{E918260C-A547-46ED-980D-F673CF6BF2DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrument.API.Tests", "Instrument.API.Tests\Instrument.API.Tests.csproj", "{7EBEB477-EF9C-4F45-AE75-4A8AB1B2F04A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E918260C-A547-46ED-980D-F673CF6BF2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E918260C-A547-46ED-980D-F673CF6BF2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E918260C-A547-46ED-980D-F673CF6BF2DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EBEB477-EF9C-4F45-AE75-4A8AB1B2F04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBEB477-EF9C-4F45-AE75-4A8AB1B2F04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBEB477-EF9C-4F45-AE75-4A8AB1B2F04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBEB477-EF9C-4F45-AE75-4A8AB1B2F04A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

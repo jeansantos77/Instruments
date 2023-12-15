@@ -1,8 +1,8 @@
 ﻿using Instrument.API.Domain.Enumerators;
 
-namespace Instrument.API.Models
+namespace Instrument.API.Domain.Models
 {
-    public class CategoryModel 
+    public class CategoryAddModel
     {
         public string Name { get; set; }
         public Operator Operator { get; set; }

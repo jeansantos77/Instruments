@@ -1,56 +1,66 @@
-﻿using Instrument.API.Application.Interfaces;
+﻿using AutoMapper;
+using Instrument.API.Application.Interfaces;
 using Instrument.API.Domain.Entities;
 using Instrument.API.Domain.Interfaces;
+using Instrument.API.Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Instrument.API.Application.Implementations
 {
     public class TypeInstrumentService : ITypeInstrumentService
     {
-        private ITypeInstrumentRepository _typeInstrumentRepository;
-        public TypeInstrumentService(ITypeInstrumentRepository typeInstrumentRepository)
+        private readonly IMapper _mapper;
+        private readonly ITypeInstrumentRepository _typeInstrumentRepository;
+
+        public TypeInstrumentService(IMapper mapper, ITypeInstrumentRepository typeInstrumentRepository)
         {
+            _mapper = mapper;
             _typeInstrumentRepository = typeInstrumentRepository;
         }
 
-        public async Task Add(TypeInstrument entity)
+        public async Task Add(TypeInstrumentAddModel entity)
         {
-            await _typeInstrumentRepository.Add(entity);
+            if (entity.Name == null)
+            {
+                throw new Exception("Name must be informed!");
+            }
+
+            TypeInstrument typeInstrument = _mapper.Map<TypeInstrument>(entity);
+            await _typeInstrumentRepository.Add(typeInstrument);
         }
 
         public async Task Delete(int id)
         {
-            TypeInstrument entity = await GetById(id);
+            TypeInstrumentModel typeInstrument = await GetById(id);
 
-            if (entity == null)
+            if (typeInstrument == null)
             {
                 throw new Exception($"Type Instrument with [ Id = {id}] not found.");
             }
 
+            TypeInstrument entity = _mapper.Map<TypeInstrument>(typeInstrument);
+
             await _typeInstrumentRepository.Delete(entity);
         }
 
-        public async Task<List<TypeInstrument>> GetAll(Expression<Func<TypeInstrument, bool>> predicate)
+        public async Task<TypeInstrumentModel> GetById(int id)
         {
-            return await _typeInstrumentRepository.GetAll(predicate);
+            TypeInstrument entity = await _typeInstrumentRepository.GetById(id);
+            return _mapper.Map<TypeInstrumentModel>(entity);
         }
 
-        public async Task<TypeInstrument> GetById(int id)
+        public async Task Update(TypeInstrumentModel entity)
         {
-            return await _typeInstrumentRepository.GetById(id);
+            TypeInstrument typeInstrument = _mapper.Map<TypeInstrument>(entity);
+            await _typeInstrumentRepository.Update(typeInstrument);
         }
 
-        public async Task Update(TypeInstrument entity)
+        public async Task<List<TypeInstrumentModel>> GetAllTypes()
         {
-            await _typeInstrumentRepository.Update(entity);
-        }
-
-        public async Task<List<TypeInstrument>> GetAllTypes()
-        {
-            return await _typeInstrumentRepository.GetAll(t => t.Id > 0);
+            var entities = await _typeInstrumentRepository.GetAll(t => t.Id > 0);
+            return _mapper.Map<List<TypeInstrumentModel>>(entities);
         }
     }
 }

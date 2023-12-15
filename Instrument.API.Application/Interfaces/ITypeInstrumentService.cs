@@ -1,13 +1,15 @@
-﻿using Instrument.API.Domain.Entities;
+﻿using Instrument.API.Domain.Models;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
-using System;
 
 namespace Instrument.API.Application.Interfaces
 {
-    public interface ITypeInstrumentService : IBaseService<TypeInstrument>
+    public interface ITypeInstrumentService
     {
-        Task<List<TypeInstrument>> GetAllTypes();
+        Task Add(TypeInstrumentAddModel entity);
+        Task Update(TypeInstrumentModel entity);
+        Task Delete(int id);
+        Task<TypeInstrumentModel> GetById(int id);
+        Task<List<TypeInstrumentModel>> GetAllTypes();
     }
 }

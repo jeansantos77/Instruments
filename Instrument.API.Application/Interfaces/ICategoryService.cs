@@ -1,13 +1,16 @@
 ﻿using Instrument.API.Domain.Entities;
+using Instrument.API.Domain.Models;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
-using System;
 
 namespace Instrument.API.Application.Interfaces
 {
-    public interface ICategoryService : IBaseService<Category>
+    public interface ICategoryService 
     {
-        Task<List<Category>> GetAllCategories();
+        Task Add(CategoryAddModel entity);
+        Task Update(CategoryModel entity);
+        Task Delete(int id);
+        Task<CategoryModel> GetById(int id);
+        Task<List<CategoryModel>> GetAllCategories();
     }
 }

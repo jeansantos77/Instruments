@@ -37,7 +37,7 @@ namespace Instrument.API.Infra.Data.Repository
             await _dbContext.SaveChangesAsync();
         }
 
-        public async Task<T> GetById(int id)
+        public virtual async Task<T> GetById(int id)
         {
             return await _dbContext.Set<T>().FindAsync(id);
         }

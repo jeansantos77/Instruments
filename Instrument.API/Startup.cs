@@ -1,23 +1,16 @@
 using Instrument.API.Application.Implementations;
 using Instrument.API.Application.Interfaces;
 using Instrument.API.Domain.Interfaces;
+using Instrument.API.Infra.Data.AutoMapper;
 using Instrument.API.Infra.Data.Context;
 using Instrument.API.Infra.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Instrument.API.AutoMapper;
 
 namespace Instrument.API
 {
@@ -46,7 +39,9 @@ namespace Instrument.API
             services.AddScoped<ITypeInstrumentRepository, TypeInstrumentRepository>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ITypeInstrumentService, TypeInstrumentService>();
+            services.AddScoped<IInstrumentService, InstrumentService>();
             services.AddAutoMapper(typeof(AutoMappings));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
