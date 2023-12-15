@@ -11,7 +11,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instrument.API.Domain", "In
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instrument.API.Application", "Instrument.API.Application\Instrument.API.Application.csproj", "{E918260C-A547-46ED-980D-F673CF6BF2DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instrument.API.Tests", "Instrument.API.Tests\Instrument.API.Tests.csproj", "{7EBEB477-EF9C-4F45-AE75-4A8AB1B2F04A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Instrument.API.Tests", "Instrument.API.Tests\Instrument.API.Tests.csproj", "{7EBEB477-EF9C-4F45-AE75-4A8AB1B2F04A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D0BE8CEF-2F6C-41F2-8F67-E6AB6E209B38}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Evidencias", "Evidencias", "{3400D33C-2C06-4E2E-9983-C01E125F991F}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\Evidencia.png = ..\..\..\Downloads\Evidencia.png
+		..\..\..\Downloads\EvidenciaProcedure.png = ..\..\..\Downloads\EvidenciaProcedure.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Parametros", "Parametros", "{F40E7903-4892-4E47-8A71-9EE9ED7FCECC}"
+	ProjectSection(SolutionItems) = preProject
+		Body.txt = Body.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
