@@ -5,5 +5,5 @@
 3. Usado o padrão Repository
 4. Foram criados alguns testes unitários
 4. Na camada Infra.Data tem uma pasta Scripts contendo os scripts da Questão 2
-5. Na raiz da solução tem uma pasta chamada Evidencias onde consta as imagems do resultado da execução da API e da procedure
-6. Na raiz da solução tem uma pasta chamada Parametros onde consta um txt com o body usado para executar o endpoint responsável por retornar as categorias
+5. No projeto Instrument.API tem uma pasta chamada Evidencias onde consta as imagems do resultado da execução da API e da procedure
+6. No projeto Instrument.API tem uma pasta chamada Parametros onde consta um txt com o body usado para executar o endpoint responsável por retornar as categorias

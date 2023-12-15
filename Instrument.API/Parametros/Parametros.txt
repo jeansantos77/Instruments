@@ -1,0 +1,19 @@
+﻿[
+  {
+    "marketValue": 800000,
+    "type": "Stock"
+  },
+  {
+    "marketValue": 1500000,
+    "type": "Bond"
+  },
+  {
+    "marketValue": 6000000,
+    "type": "Derivative"
+  },
+  {
+    "marketValue": 300000,
+    "type": "Stock"
+  }
+
+]
